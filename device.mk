@@ -140,6 +140,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += InProcessNetworkStack
 PRODUCT_PACKAGES += com.android.tethering.inprocess
 
+# Reduce system image size by limiting java debug info.
+PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
+
 # WiFi
 PRODUCT_PACKAGES += \
     WifiOverlay \
