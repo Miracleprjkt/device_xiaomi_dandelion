@@ -98,6 +98,10 @@ ro.zram.mark_idle_delay_mins=60
 ro.zram.first_wb_delay_mins=1440
 ro.zram.periodic_wb_delay_hours=24
 
+# Fling velocities
+ro.min.fling_velocity=160
+ro.max.fling_velocity=20000
+
 # IMS 
 persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=1
@@ -165,11 +169,9 @@ ro.sf.compbypass.enable=0
 hwui.render_dirty_regions=false
 debug.sf.latch_unsignaled=1
 persist.sys.use_16bpp_alpha=1
-ro.max.fling_velocity=20000
 ro.config.enable.hw_accel=true
 hw2d.force=1
 ro.product.gpu.driver=1
-ro.min.fling_velocity=18000
 debug.egl.hw=1
 hwui.disable_vsync=true
 sys.use_fifo_ui=1
