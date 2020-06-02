@@ -21,6 +21,12 @@ on charger
     write /sys/class/leds/lcd-backlight/brightness "1000"
     write /sys/class/leds/lcd-backlight/trigger "backlight"
 
+on property:persist.sys.dandelion.dt2w=0
+    exec /system/bin/sendevent /dev/input/event3 0 1 4
+
+on property:persist.sys.dandelion.dt2w=1
+    exec /system/bin/sendevent /dev/input/event3 0 1 5
+
 on fs
     mount_all /vendor/etc/fstab.mt6765 --early
     mount_all /vendor/etc/fstab.mt6765 --late
