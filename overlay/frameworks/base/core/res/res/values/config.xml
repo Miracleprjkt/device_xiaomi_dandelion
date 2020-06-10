@@ -550,10 +550,12 @@
         <item>/system/framework/oat/arm/services.odex</item>
         <item>/system/framework/arm/boot-framework.oat</item>
         <item>/system/framework/arm/boot-core-libart.oat</item>
-        <item>/apex/com.android.runtime/javalib/core-oj.jar</item>
+        <item>"/apex/com.android.art/javalib/arm/boot.oat"</item>
+        <item>"/apex/com.android.art/javalib/arm/boot-core-libart.oat"</item>
+        <item>"/apex/com.android.art/javalib/core-oj.jar"</item>
+        <item>"/apex/com.android.art/javalib/core-libart.jar"</item>
         <item>/product/priv-app/SystemUI/SystemUI.apk</item>
         <item>/product/priv-app/SystemUI/oat/arm/SystemUI.odex</item>
-        <item>/apex/com.android.runtime/javalib/core-libart.jar</item>
         <item>/apex/com.android.media/javalib/updatable-media.jar</item>
         <item>/system/lib/libRScpp.so</item>
         <item>/system/lib/libRS.so</item>
@@ -571,8 +573,8 @@
         <item>/system/framework/services.jar</item>
         <item>/system/framework/arm/apex.oat</item>
         <item>/system/framework/arm/apex-core-libart.oat</item>
-        <item>/apex/com.android.runtime/javalib/core-oj.jar</item>
-        <item>/apex/com.android.runtime/javalib/core-libart.jar</item>
+        <item>/apex/com.android.art/javalib/core-oj.jar</item>
+        <item>/apex/com.android.art/javalib/core-libart.jar</item>
         <item>/apex/com.android.media/javalib/updatable-media.jar</item>
         <item>/product/priv-app/SystemUI/SystemUI.apk</item>
         <item>/system/lib/libsurfaceflinger.so</item>
