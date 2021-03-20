@@ -8,6 +8,13 @@ on init
     mount none /system/etc/fstab.mt6765 /vendor/etc/fstab.mt6765 bind
     mount none /vendor/lost+found /vendor/overlay bind
 
+service charger /system/bin/charger
+    class charger
+    user system
+    group system graphics input
+    capabilities SYS_BOOT
+    seclabel u:r:charger:s0
+
 on fs
     mount_all /vendor/etc/fstab.mt6765 --early
     mount_all /vendor/etc/fstab.mt6765 --late
