@@ -107,25 +107,27 @@ void vendor_load_properties()
     property_override("dalvik.vm.heapmaxfree", heapmaxfree);
 
     string model = "Redmi G25 Series";
+    string fingerprint = "google/sunfish/sunfish:11/RQ2A.210305.006/7119741:user/release-keys";
 
-    // Override odm and vendor partitions' props
-    string prop_partitions[] = { "odm.", "vendor." };
+    // Override bootimage, odm and vendor partitions' props
+    string prop_partitions[] = { "bootimage.", "odm.", "vendor." };
     for (const string &prop : prop_partitions) {
         property_override(string("ro.product.") + prop + string("model"), model);
+        property_override(string("ro.") + prop + string("build.fingerprint"), fingerprint);
     }
 
     // Override Privapp permissions whitelisting props
     property_override(string("ro.control_privapp_permissions"), string("log"));
 
     // Override Power Saving props
-    property_override(string("ro.config.hw_power_saving"), string("true"));
+    property_override(string("ro.config.hw_power_saving"), string("1"));
 
     // Override Perf props
-    property_override(string("profiler.force_disable_err_rpt"), string("true"));
-    property_override(string("profiler.force_disable_ulog"), string("true"));
+    property_override(string("profiler.force_disable_err_rpt"), string("1"));
+    property_override(string("profiler.force_disable_ulog"), string("1"));
 
     // Override GPU Perf props
-    property_override(string("debug.composition.type"), string("hw"));
+    property_override(string("debug.composition.type"), string("gpu"));
 
     // Override Debug props
     property_override(string("ro.secure"), string("0"));
@@ -135,6 +137,6 @@ void vendor_load_properties()
     property_override(string("persist.vendor.vilte_support"), string("0"));
 
     // Override Charger props
-    property_override(string("ro.charger.enable_suspend"), string("true"));
+    property_override(string("ro.charger.enable_suspend"), string("1"));
 
 }
