@@ -38,12 +38,12 @@ TARGET_VENDOR_PRODUCT_NAME := dandelion
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE=dandelion \
     PRODUCT_NAME=dandelion \
-    PRIVATE_BUILD_DESC="dandelion-user 10 QP1A.190711.020 V12.0.11.0.QCDMIXM release-keys"
+    PRIVATE_BUILD_DESC="sunfish-user 11 RQ2A.210405.005 7181113 release-keys"
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := google/sunfish/sunfish:11/RQ2A.210305.006/7119741:user/release-keys
+BUILD_FINGERPRINT := google/sunfish/sunfish:11/RQ2A.210405.005/7181113:user/release-keys
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.fingerprint=$(BUILD_FINGERPRINT)

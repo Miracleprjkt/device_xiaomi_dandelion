@@ -106,37 +106,51 @@ void vendor_load_properties()
     property_override("dalvik.vm.heapminfree", heapminfree);
     property_override("dalvik.vm.heapmaxfree", heapmaxfree);
 
+    string product = "dandelion";
     string model = "Redmi G25 Series";
-    string fingerprint = "google/sunfish/sunfish:11/RQ2A.210305.006/7119741:user/release-keys";
+    string description = "sunfish-user 11 RQ2A.210405.005 7181113 release-keys";
+    string fingerprint = "google/sunfish/sunfish:11/RQ2A.210405.005/7181113:user/release-keys";
+    string client_id = "android-xiaomi";
 
-    // Override bootimage, odm and vendor partitions' props
-    string prop_partitions[] = { "bootimage.", "odm.", "vendor." };
+    // Override Device props
+    string prop_partitions[] = { "", "product.", "product_services.", "odm.",
+                                 "vendor.", "system.", "system_ext.", "bootimage." };
     for (const string &prop : prop_partitions) {
+        property_override(string("ro.product.") + prop + string("device"), product);
         property_override(string("ro.product.") + prop + string("model"), model);
         property_override(string("ro.") + prop + string("build.fingerprint"), fingerprint);
+        property_override(string("ro.build.fingerprint"), fingerprint);
+        property_override(string("ro.build.description"), description);
+        property_override(string("ro.product.") + prop + string("name"), product);
     }
 
+    property_override("ro.build.description", description);
+    property_override("ro.build.product", model);
+    property_override("ro.build.com.google.clientidbase", client_id);
+
     // Override Privapp permissions whitelisting props
-    property_override(string("ro.control_privapp_permissions"), string("log"));
+    property_override("ro.control_privapp_permissions", "log");
 
     // Override Power Saving props
-    property_override(string("ro.config.hw_power_saving"), string("1"));
+    property_override("ro.config.hw_power_saving", "1");
 
     // Override Perf props
-    property_override(string("profiler.force_disable_err_rpt"), string("1"));
-    property_override(string("profiler.force_disable_ulog"), string("1"));
+    property_override("profiler.force_disable_err_rpt", "1");
+    property_override("profiler.force_disable_ulog", "1");
 
     // Override GPU Perf props
-    property_override(string("debug.composition.type"), string("gpu"));
+    property_override("debug.composition.type", "gpu");
 
     // Override Debug props
-    property_override(string("ro.secure"), string("0"));
-    property_override(string("ro.debuggable"), string("1"));
-
-    // Override IMS props
-    property_override(string("persist.vendor.vilte_support"), string("0"));
+    property_override("ro.secure", "1");
+    property_override("ro.debuggable", "0");
 
     // Override Charger props
-    property_override(string("ro.charger.enable_suspend"), string("1"));
+    property_override("ro.charger.enable_suspend", "1");
+
+    // Override Security props
+    property_override("ro.oem_unlock_supported", "0");
+    property_override("ro.boot.verifiedbootstate", "green");
+    property_override("ro.build.type", "user");
 
 }
