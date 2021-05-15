@@ -107,16 +107,6 @@ PRODUCT_PACKAGES += \
     libsuspend \
     android.hardware.health@2.0
 
-# IMS
-PRODUCT_BOOT_JARS += \
-    mediatek-common \
-    mediatek-framework \
-    mediatek-ims-base \
-    mediatek-ims-common \
-    mediatek-telecom-common \
-    mediatek-telephony-base \
-    mediatek-telephony-common
-
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/apns-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
 
@@ -128,9 +118,6 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     ImsInit
-
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/public.libraries-trustonic.txt:$(TARGET_COPY_OUT_SYSTEM)/etc/public.libraries-trustonic.txt
 
 PRODUCT_PACKAGES += \
     com.android.ims.rcsmanager \
