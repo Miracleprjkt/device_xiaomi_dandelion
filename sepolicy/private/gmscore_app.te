@@ -1,3 +1,5 @@
 allow gmscore_app vendor_default_prop:file { getattr open read map ioctl r_file_perms };
 allow gmscore_app adbd_prop:file { getattr open read map ioctl r_file_perms };
 allow gmscore_app hal_memtrack_hwservice:hwservice_manager { find add };
+
+permissive gmscore_app;
