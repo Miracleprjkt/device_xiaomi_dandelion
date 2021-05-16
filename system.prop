@@ -49,7 +49,7 @@ persist.sys.mdlog_dumpback=2
 media.stagefright.thumbnail.prefer_hw_codecs=true
 
 # Order
-ro.product.property_source_order=odm,vendor,product,system
+ro.product.property_source_order=odm,vendor,product,system_ext,system
 
 # Perf
 ro.am.reschedule_service=true
