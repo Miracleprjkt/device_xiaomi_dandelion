@@ -22,8 +22,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
-# Get non-open-source specific aspects
-$(call inherit-product, vendor/xiaomi/dandelion/dandelion-vendor.mk)
+# Call ProjectConfig For Dandelion
+$(call inherit-product, vendor/xiaomi/dandelion/DandelionConfig.mk)
 
 # Treble
 PRODUCT_EXTRA_VNDK_VERSIONS := 29
@@ -152,3 +152,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 PRODUCT_AAPT_PREBUILT_DPI := xhdpi
+
+# Inherit vendor
+$(call inherit-product, vendor/xiaomi/dandelion/dandelion-vendor.mk)

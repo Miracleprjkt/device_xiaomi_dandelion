@@ -175,3 +175,6 @@ BOARD_INCLUDE_RECOVERY_DTBO := true
 BOARD_USES_RECOVERY_AS_BOOT := false
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_LARGE_FILESYSTEM := true
+
+# Inherit from the proprietary version
+-include vendor/xiaomi/dandelion/BoardConfigVendor.mk
