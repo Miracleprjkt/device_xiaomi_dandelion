@@ -49,6 +49,9 @@ TARGET_USES_UEFI := true
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 
+# Compile libhwui in performance mode
+HWUI_COMPILE_FOR_PERF := true
+
 # Display
 TARGET_DISABLE_POSTRENDER_CLEANUP := true
 
