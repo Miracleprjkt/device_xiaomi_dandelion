@@ -24,9 +24,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_system_ext.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system_ext.mk)
 
 # Inherit some common Aosp stuff
-TARGET_BOOT_ANIMATION_RES := 720
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
+TARGET_BOOT_ANIMATION_RES := 720
+TARGET_INCLUDE_LIVE_WALLPAPERS := false
 # Inherit from dandelion device makefile
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
